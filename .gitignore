@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.log
+
+# Kubernetes sensitive files
+secret.yml

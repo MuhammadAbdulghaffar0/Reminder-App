@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reminder
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: reminder
+
+  template:
+    metadata:
+      labels:
+        app: reminder
+
+    spec:
+      containers:
+      - name: reminder
+        image: water-reminder:v4
+        imagePullPolicy: Never
+
+        envFrom:
+        - configMapRef:
+            name: reminder-variables
+
+        - secretRef:
+            name: telegram-secret

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: reminder-variables
+
+data:
+  WATER_INTERVAL: "10000"
+  DUAA_INTERVAL: "20000"
+  PRAYER_INTERVAL: "30000"
